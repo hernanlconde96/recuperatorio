@@ -1,39 +1,34 @@
+# Diagrama UML - Vehículos
 
-**Leyenda:**
-- `-` = atributo privado/protegido
-- `+` = método público
-- `△` = herencia
+```mermaid
+classDiagram
+    class Vehiculo {
+        # conductor : String
+        # placa : String
+        # id : int
+        + Vehiculo(conductor : String, placa : String, id : int)
+        + mostrarDatos() : void
+        + cambiarConductor(nuevoConductor : String) : void
+    }
 
-## Descripción de Clases
+    class Bus {
+        - capacidad : int
+        - sindicato : String
+        + Bus(conductor : String, placa : String, id : int, capacidad : int, sindicato : String)
+    }
 
-### Clase Base: Vehiculo
-**Atributos:**
-- `conductor` (String) - Nombre del conductor
-- `placa` (String) - Placa del vehículo
-- `id` (int) - Identificador único
+    class Auto {
+        - caballosFuerza : int
+        - descapotable : boolean
+        + Auto(conductor : String, placa : String, id : int, caballosFuerza : int, descapotable : boolean)
+    }
 
-**Métodos:**
-- `mostrarDatos()` - Muestra placa y conductor
-- `cambiarConductor(String)` - Cambia el conductor
+    class Moto {
+        - cilindrada : int
+        - casco : boolean
+        + Moto(conductor : String, placa : String, id : int, cilindrada : int, casco : boolean)
+    }
 
-### Subclases:
-
-#### Bus
-**Atributos propios:**
-- `capacidad` (int) - Número de pasajeros
-- `sindicato` (String) - Sindicato al que pertenece
-
-#### Auto
-**Atributos propios:**
-- `caballosFuerza` (int) - Potencia del motor
-- `descapotable` (boolean) - Si es descapotable
-
-#### Moto
-**Atributos propios:**
-- `cilindrada` (int) - Cilindrada del motor
-- `casco` (boolean) - Si incluye casco
-
-## Relaciones
-- **Herencia**: Bus, Auto y Moto heredan de Vehiculo
-- **Jerarquía**: Estructura de herencia simple
-- **Especialización**: Cada subclase añade atributos específicos
+    Vehiculo <|-- Bus
+    Vehiculo <|-- Auto
+    Vehiculo <|-- Moto
