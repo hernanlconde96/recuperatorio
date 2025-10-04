@@ -1,33 +1,32 @@
+# Diagrama UML - Sistema de Vehículos
 
-## Descripción de Clases
+## Estructura de Clases
 
-### Clase Base: Vehiculo
-**Atributos:**
-- `conductor` (String)
-- `placa` (String)
-- `id` (int)
+```mermaid
+classDiagram
+    class Vehiculo {
+        -String conductor
+        -String placa
+        -int id
+        +mostrarDatos() void
+        +cambiarConductor(String) void
+    }
 
-**Métodos:**
-- `mostrarDatos()`
-- `cambiarConductor(String)`
+    class Bus {
+        -int capacidad
+        -String sindicato
+    }
 
-### Subclases:
+    class Auto {
+        -int caballosFuerza
+        -boolean descapotable
+    }
 
-#### Bus (hereda de Vehiculo)
-**Atributos propios:**
-- `capacidad` (int)
-- `sindicato` (String)
+    class Moto {
+        -int cilindrada
+        -boolean casco
+    }
 
-#### Auto (hereda de Vehiculo)
-**Atributos propios:**
-- `caballosFuerza` (int)
-- `descapotable` (boolean)
-
-#### Moto (hereda de Vehiculo)
-**Atributos propios:**
-- `cilindrada` (int)
-- `casco` (boolean)
-
-## Relaciones
-- **Herencia**: Bus, Auto y Moto heredan de Vehiculo
-- **Jerarquía**: Estructura de herencia simple
+    Vehiculo <|-- Bus
+    Vehiculo <|-- Auto
+    Vehiculo <|-- Moto
