@@ -1,15 +1,16 @@
-# diagrama uml - videojuego
+# Diagrama UML - Clase Celular
 
 ```mermaid
 classDiagram
-    class Videojuego {
-        - nombre : String
-        - plataforma : String
-        - cantidadJugadores : int
-        + Videojuego()
-        + Videojuego(nombre : String)
-        + Videojuego(nombre : String, plataforma : String, cantidadJugadores : int)
-        + agregarJugadores() void
-        + agregarJugadores(cantidad : int) void
-        + mostrarInfo() void
+    class Celular {
+        - String nroTel
+        - String duenio
+        - int espacio
+        - int ram
+        - int nroApp
+        + Celular(String nroTel, String duenio, int espacio, int ram, int nroApp)
+        + aumentarApps() void
+        + reducirEspacio() void
+        + mostrar() void
+        + main(String[] args) void
     }
