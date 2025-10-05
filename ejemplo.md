@@ -1,34 +1,31 @@
-# Diagrama UML - Vehículos
+# diagrama uml - sistema de personas
 
 ```mermaid
 classDiagram
-    class Vehiculo {
-        # conductor : String
-        # placa : String
-        # id : int
-        + Vehiculo(conductor : String, placa : String, id : int)
-        + mostrarDatos() : void
-        + cambiarConductor(nuevoConductor : String) : void
+    class persona {
+        # nombre : String
+        # paterno : String
+        # materno : String
+        # edad : int
+        + persona(nombre : String, paterno : String, materno : String, edad : int)
+        + mostrar() : void
+        + getEdad() : int
     }
 
-    class Bus {
-        - capacidad : int
-        - sindicato : String
-        + Bus(conductor : String, placa : String, id : int, capacidad : int, sindicato : String)
+    class docente {
+        - sueldo : double
+        - regProfesional : String
+        + docente(nombre : String, paterno : String, materno : String, edad : int, sueldo : double, regProfesional : String)
+        + mostrar() : void
     }
 
-    class Auto {
-        - caballosFuerza : int
-        - descapotable : boolean
-        + Auto(conductor : String, placa : String, id : int, caballosFuerza : int, descapotable : boolean)
+    class estudiante {
+        - ru : String
+        - matricula : String
+        + estudiante(nombre : String, paterno : String, materno : String, edad : int, ru : String, matricula : String)
+        + mostrar() : void
+        + modificarEdad(nuevaEdad : int) : void
     }
 
-    class Moto {
-        - cilindrada : int
-        - casco : boolean
-        + Moto(conductor : String, placa : String, id : int, cilindrada : int, casco : boolean)
-    }
-
-    Vehiculo <|-- Bus
-    Vehiculo <|-- Auto
-    Vehiculo <|-- Moto
+    persona <|-- docente
+    persona <|-- estudiante
