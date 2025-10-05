@@ -1,32 +1,17 @@
-# Diagrama UML - Clases Pasajero y Crucero
+# Diagrama UML - Clase MP4
 
 ```mermaid
 classDiagram
-    class Pasajero {
-        - String nombre
-        - int edad
-        - String genero
-        - int nroHabitacion
-        - double costoPasaje
-        + Pasajero(String nombre, int edad, String genero, int nroHabitacion, double costoPasaje)
-        + mostrarDatos() String
-        + mostrarNombre() String
-        + getGenero() String
-        + getCostoPasaje() double
+    class MP4 {
+        - String marca
+        - float capacidadGb
+        - List~Dict~ canciones
+        - List~Dict~ videos
+        + MP4(String marca, float capacidadGb)
+        + espacio_usado() float
+        + espacio_disponible() float
+        + borrar_cancion(criterio, valor) void
+        + __add__(cancion) str
+        + __sub__(video) str
+        + __str__() str
     }
-
-    class Crucero {
-        - String nombre
-        - String paisOrigen
-        - String paisDestino
-        - ArrayList~Pasajero~ pasajeros
-        + Crucero(String nombre, String paisOrigen, String paisDestino)
-        + agregarPasajero(Pasajero p) void
-        + mostrarInfo() String
-        + mostrarNombre() String
-        + compararCostoTotal(Crucero other) String
-        + compararCantidadPasajeros(Crucero other) String
-        + contarGenero() String
-    }
-
-    Crucero "1" --> "*" Pasajero : tiene >
