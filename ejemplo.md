@@ -2,7 +2,7 @@
 
 ```mermaid
 classDiagram
-    class persona {
+    class Persona {
         # nombre : String
         # paterno : String
         # materno : String
@@ -12,14 +12,14 @@ classDiagram
         + getEdad() : int
     }
 
-    class docente {
+    class Docente {
         - sueldo : double
         - regProfesional : String
         + docente(nombre : String, paterno : String, materno : String, edad : int, sueldo : double, regProfesional : String)
         + mostrar() : void
     }
 
-    class estudiante {
+    class Estudiante {
         - ru : String
         - matricula : String
         + estudiante(nombre : String, paterno : String, materno : String, edad : int, ru : String, matricula : String)
