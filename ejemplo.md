@@ -1,31 +1,15 @@
-# diagrama uml - sistema de personas
+# diagrama uml - videojuego
 
 ```mermaid
 classDiagram
-    class Persona {
-        # nombre : String
-        # paterno : String
-        # materno : String
-        # edad : int
-        + Persona(nombre : String, paterno : String, materno : String, edad : int)
-        + mostrar() : void
-        + getEdad() : int
+    class Videojuego {
+        - nombre : String
+        - plataforma : String
+        - cantidadJugadores : int
+        + Videojuego()
+        + Videojuego(nombre : String)
+        + Videojuego(nombre : String, plataforma : String, cantidadJugadores : int)
+        + agregarJugadores() void
+        + agregarJugadores(cantidad : int) void
+        + mostrarInfo() void
     }
-
-    class Docente {
-        - sueldo : double
-        - regProfesional : String
-        + Docente(nombre : String, paterno : String, materno : String, edad : int, sueldo : double, regProfesional : String)
-        + mostrar() : void
-    }
-
-    class Estudiante {
-        - ru : String
-        - matricula : String
-        + Estudiante(nombre : String, paterno : String, materno : String, edad : int, ru : String, matricula : String)
-        + mostrar() : void
-        + modificarEdad(nuevaEdad : int) : void
-    }
-
-    Persona <|-- Docente
-    Persona <|-- Estudiante
